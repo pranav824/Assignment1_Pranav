@@ -28,7 +28,7 @@ This is a simple 3-tier rule engine application built using the Django framework
    Clone the Repository into your local system. Avoid the .venv as I have created it for my system which is a best practice to run the application locally.
    ```bash or powershell
 
-   git clone https://github.com/pranav824/Assignment1_Pranav
+   git clone https://github.com/pranav824/Assignment1_Pranav.git
    cd rule_engine_project
    
 2. **Running Commands:**
