@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rule Engine Test Cases</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Rule Engine Test Cases</h1>
+
+    <form method="POST" action="{% url 'add_test_case' %}">
+        {% csrf_token %}
+        <label for="description">Test Case Description:</label>
+        <input type="text" id="description" name="description" required><br><br>
+
+        <label for="input_data">Input Data (JSON format):</label>
+        <textarea id="input_data" name="input_data" required></textarea><br><br>
+
+        <label for="expected_output_rule1">Expected Output (Rule 1):</label>
+        <input type="text" id="expected_output_rule1" name="expected_output_rule1" required><br><br>
+
+        <label for="expected_output_rule2">Expected Output (Rule 2):</label>
+        <input type="text" id="expected_output_rule2" name="expected_output_rule2" required><br><br>
+
+        <button type="submit">Add Test Case</button>
+    </form>
+
+    <h2>Submitted Test Cases</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Description</th>
+                <th>Input Data</th>
+                <th>Expected Output (Rule 1)</th>
+                <th>Actual Output (Rule 1)</th>
+                <th>Expected Output (Rule 2)</th>
+                <th>Actual Output (Rule 2)</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for test_case in test_cases %}
+            <tr>
+                <td>{{ test_case.description }}</td>
+                <td>{{ test_case.input_data }}</td>
+                <td>{{ test_case.expected_output_rule1 }}</td>
+                <td>{{ test_case.actual_output_rule1 }}</td>
+                <td>{{ test_case.expected_output_rule2 }}</td>
+                <td>{{ test_case.actual_output_rule2 }}</td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6">No test cases submitted yet.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+</body>
+</html>
