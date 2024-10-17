@@ -28,13 +28,13 @@ This is a simple 3-tier rule engine application built using the Django framework
    Clone the Repository into your local system. Avoid the .venv as I have created it for my system which is a best practice to run the application locally.
    ```bash or powershell
 
-   git clone <repository-url>
+   git clone https://github.com/pranav824/Assignment1_Pranav
    cd rule_engine_project
    
 2. **Running Commands:**
    Install the dependencies in requirements.txt file
 
-   Django comes with an inbuilt database which is SQLite, so no prior installation is required. But after defing models run the command mentioned below:
+   Django comes with an inbuilt database which is SQLite, so no prior installation is required. But after defining models run the command mentioned below:
    python manage.py makemigrations (Creates migration files based on changes to your models.)
    python manage.py migrate (Applies those migration files to your database, updating the schema accordingly.)
 
@@ -43,5 +43,6 @@ This is a simple 3-tier rule engine application built using the Django framework
 
 **Note**:
    The test cases can be passed with postman and the method test cases with unittest.Here, I have used an index page to pass the test cases.
+   Run the application globally or create a new venv and install all the dependencies before following up.
    
    
